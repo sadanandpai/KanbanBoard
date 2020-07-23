@@ -1,0 +1,380 @@
+/* This is the variable to set and unset dark mode */
+:root {
+  --main-fg-color: #000;
+  --main-bg-color: #fff;
+}
+
+div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-bg-color);
+  color: var(--main-fg-color);
+}
+
+h1 {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  padding: 0 10px;
+}
+
+.grid-layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr)) [4];
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+}
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-no-grow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-space-between {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  flex-grow: 0;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.story-column {
+  height: -webkit-calc(100vh - 140px);
+  height: calc(100vh - 140px);
+  border: 2px solid var(--main-fg-color);
+  margin: 0 5px;
+}
+
+.story-column::-webkit-scrollbar {
+  display: none;
+}
+
+.transition-affect-on {
+  -webkit-animation: bgAnimation 1s forwards;
+  animation: bgAnimation 1s forwards;
+}
+
+@-webkit-keyframes bgAnimation {
+  from {
+    background-color: var(--main-fg-color);
+  }
+  to {
+    background-color: var(--main-bg-color);
+  }
+}
+
+@keyframes bgAnimation {
+  from {
+    background-color: var(--main-fg-color);
+  }
+  to {
+    background-color: var(--main-bg-color);
+  }
+}
+
+.title {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: var(--main-fg-color);
+  color: var(--main-bg-color);
+  text-align: center;
+  -webkit-border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 5px solid greenyellow;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.sticky {
+  height: 155px;
+  padding: 10px;
+  width: 92%;
+  background: -webkit-linear-gradient(315deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  background: -o-linear-gradient(315deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  background: linear-gradient(135deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%);
+  margin: 10px;
+  -webkit-border-bottom-right-radius: 60px 5px;
+  border-bottom-right-radius: 60px 5px;
+  -webkit-box-shadow: 2px 2px 6px var(--main-fg-color);
+  box-shadow: 2px 2px 6px var(--main-fg-color);
+  position: relative;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.sticky:active {
+  -webkit-box-shadow: 6px 6px 12px 5px var(--main-fg-color);
+  box-shadow: 6px 6px 12px 5px var(--main-fg-color);
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.sticky .sticky-name {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.sticky .sticky-description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+#story {
+  position: relative;
+}
+
+.eye-drop {
+  background-color: var(--main-fg-color);
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  display: none;
+}
+
+.modal {
+  height: auto;
+  width: 50%;
+  border: 1px solid var(--main-fg-color);
+  z-index: 2;
+  background-color: var(--main-bg-color);
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  padding: 10px;
+  display: none;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+label {
+  width: 100px;
+  display: inline-block;
+}
+
+textarea {
+  resize: none;
+}
+
+.modal div {
+  margin: 10px;
+  text-align: center;
+}
+
+.flex label {
+  width: auto;
+  vertical-align: middle;
+  margin: 0 10px 0 30px;
+}
+
+.button {
+  padding: 5px;
+  background-color: skyblue;
+  border: 1px solid black;
+  -webkit-box-shadow: 1px 1px 6px 1px grey;
+  box-shadow: 1px 1px 6px 1px var(--main-fg-color);
+  margin: 20px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 100px;
+}
+
+input[type="text"],
+textarea {
+  padding: 5px;
+  min-width: 300px;
+  width: auto;
+  border: 1px solid var(--main-fg-color);
+}
+
+input:disabled,
+textarea:disabled {
+  color: var(--main-fg-color);
+}
+
+.close {
+  padding-right: 20px;
+  cursor: pointer;
+  text-align: right;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sticky-priority {
+  width: 12px;
+  height: 8px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: brown;
+}
+
+.sticky-priority:last-child {
+  margin-right: 10px;
+}
+
+.sticky .medium {
+  -webkit-box-shadow: -15px 0 0 brown;
+  box-shadow: -15px 0 0 brown;
+}
+
+.sticky .high {
+  -webkit-box-shadow: -15px 0 0 brown, -30px 0 0 brown;
+  box-shadow: -15px 0 0 brown, -30px 0 0 brown;
+}
+
+.sticky-type {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.task {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(28, 207, 28);
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.feature {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(53, 97, 243);
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.bug {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.type-priority-arrange {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 5px 0 10px 0;
+  bottom: 0;
+  position: absolute;
+  width: 90%;
+}
+
+i {
+  margin-left: 20px;
+}
+
+.label {
+  display: inline-block;
+}
+
+.margin-10 {
+  margin: 10px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+#addSticky{
+  cursor: pointer;
+}
+
+.title::after{
+  content: '↑↓';
+  top: 8px;
+  right: 10px;
+  position: absolute;
+}
+
+.inline-block{
+  display: inline-block;
+}

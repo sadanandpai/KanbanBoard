@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <title>KanBan Board</title>
+  </head>
+  <body>
+    <div class="eye-drop"></div>
+    <div class="modal flex-column">
+      <div style="position: relative; width: 100%;">
+        <div class="inline-block">All fields are mandatory</div>
+        <div class="close" id="close">X</div>
+      </div>
+      <div>
+        <label for="modalName">Task Name</label>
+        <input type="text" id="modalName" id="modal-name" />
+      </div>
+      <div>
+        <label for="modalDescription" style="vertical-align: top;">Description</label>
+        <textarea id="modalDescription" rows="5" cols="20"></textarea>
+      </div>
+      <div class="flex task-type">
+        <label for="task">Task</label>
+        <input type="radio" name="modal-type" id="task" />
+        <label for="feature">Feature</label>
+        <input type="radio" name="modal-type" id="feature" />
+        <label for="bug">Bug</label>
+        <input type="radio" name="modal-type" id="bug" />
+      </div>
+      <div>
+        <label for="modalPriority">Priority</label>
+        <select id="modalPriority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <div class="flex">
+        <button class="button" id="save">Save</button>
+        <button class="button" id="delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="flex-space-between">
+        <h1>Kanban Board </h1>
+        <h1 id="addSticky">+</h1>
+        <button id="reset" class="button">Reset</button>
+        <div class="flex-no-grow">
+          <div>
+            <div class="margin-10 sticky-type task"></div>
+            Task
+          </div>
+          <div>
+            <div class="margin-10 sticky-type feature"></div>
+            Feature
+          </div>
+          <div>
+            <div class="margin-10 sticky-type bug"></div>
+            Bug
+          </div>
+        </div>
+        <div class="flex-no-grow">
+          <div class="margin-10"><strong>Priority</strong></div>
+          <div>
+            L
+            <div><div class="label sticky-priority"></div></div>
+          </div>
+          <div>
+            <div>M</div>
+            <div class="nowrap">
+              <div class="label sticky-priority"></div>
+              <div class="label sticky-priority"></div>
+            </div>
+          </div>
+          <div>
+            <div>H</div>
+            <div class="nowrap">
+              <div class="label sticky-priority"></div>
+              <div class="label sticky-priority"></div>
+              <div class="label sticky-priority"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dark-mode">
+          <div>
+            <label for="autosave">Auto Save</label>
+            <input type="checkbox" name="auto-save" id="autosave" />
+          </div>
+          <div>
+            <label for="darkMode">Dark Mode</label>
+            <input type="checkbox" name="dark-mode" id="darkMode" />
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-layout" id="gridLayout"></div>
+    </div>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
