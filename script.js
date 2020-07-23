@@ -7,6 +7,7 @@ var docFragment = document.createDocumentFragment();
 for (let storyType of kanbanData.columns) {
   const storyColumn = new StoryColumn(storyType);
   const columnDiv = storyColumn.createColumn();
+  columnDiv.classList.add("column-holder")
   docFragment.appendChild(columnDiv);
 }
 for (let stickyData of kanbanData.stories) {
