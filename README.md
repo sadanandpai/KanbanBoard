@@ -23,4 +23,7 @@ Feel free to clone / fork for any purpose<br /><br />
 
 Flex is used for reversing the stickies inside the column<br />
 CSS variable is used for dark mode<br />
-Drag and Drop of HTML5 is used for sticky movements
+Drag and Drop of HTML5 is used for sticky movements<br /><br />
+
+
+https://sadanandpai.github.io/KanbanBoard/
